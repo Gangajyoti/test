@@ -1,16 +1,14 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from code.file_validation import check_files
+from code.Location_Validation import data_validation
+from pathlib import Path
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# files = check_files(for_date=20210528182844)
+files = ['data_file_20210528182844.csv', 'data_file_20210528182554.csv']
+for file in files:
+    path = f'src/data/src_data_daily/{file}'
+    data_validation(data_file_path = path ,ref_file_path= 'src/data/Areas_in_blore.xlsx')
+
+
+

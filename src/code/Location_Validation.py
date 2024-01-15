@@ -22,7 +22,7 @@ def data_validation(data_file_path='../data/src_data_daily/data_file_20210528182
     :param ref_file_path: reference  lookup file (e.g. - '../data/Areas_in_blore.xlsx')
     :return: None
     """
-
+    print(ref_file_path)
     df = pd.read_excel(ref_file_path, sheet_name='Sheet1')
     sp_df = spark.createDataFrame(df)
 
@@ -37,4 +37,4 @@ def data_validation(data_file_path='../data/src_data_daily/data_file_20210528182
     subtracted_data.write.csv(f"../data/bad_data_dir/a.bad/")
 
 
-data_validation()
+
